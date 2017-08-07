@@ -1,7 +1,7 @@
 {
   "name": "hexlet",
   "version": "0.2.0",
-  "description": "",
+  "description": "Brain Games: set of games",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build"
   },
-  "author": "",
+  "author": "Max Radokhlib",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.24.1",
