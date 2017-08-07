@@ -2,7 +2,7 @@
   "name": "hexlet",
   "version": "2.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
