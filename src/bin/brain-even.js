@@ -9,6 +9,7 @@ const userName = askName();
 
 const askNumber = () => {
   const iter = (counter) => {
+    // set the number of questions at line below
     if (counter === 3) {
       return console.log(`Congratulations, ${userName}!`);
     }
@@ -24,7 +25,7 @@ const askNumber = () => {
     return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven(randomNum) ? 'yes' : 'no'}'.\n Let's try again, ${userName}!`);
   };
 
-  return iter(0); // set the number of questions
+  return iter(0);
 };
 
 askNumber();
