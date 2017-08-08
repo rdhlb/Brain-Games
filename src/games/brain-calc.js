@@ -1,4 +1,4 @@
-import { generateNumber } from '../utils';
+import generateNumber from '../utils';
 import { valueRangeMin, valueRangeMax } from '../index';
 
 console.log('Welcome to the Brain Games!');
