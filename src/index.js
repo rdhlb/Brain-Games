@@ -4,7 +4,7 @@ export const iterationsCount = 3; // set the number of questions
 export const valueRangeMin = 1;
 export const valueRangeMax = 20;
 
-const askName = () => {
+export const askName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
   return name;
