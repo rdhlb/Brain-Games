@@ -20,15 +20,15 @@ export const makeGame = (logic) => {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const realAnswer = logic();
-    const stringAnswer = readlineSync.question('Your answer: ');
-    const userAnswer = isNumber(realAnswer) ? Number(stringAnswer) : stringAnswer;
-    if (userAnswer === realAnswer) {
+    const calculatedAnswer = logic();
+    const recievedAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = isNumber(calculatedAnswer) ? Number(recievedAnswer) : recievedAnswer;
+    if (userAnswer === calculatedAnswer) {
       console.log('Correct!');
       return iter(counter + 1);
     }
 
-    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${realAnswer}'.\n Let's try again, ${userName}!\n`);
+    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\n Let's try again, ${userName}!\n`);
   };
 
   return iter(0);
