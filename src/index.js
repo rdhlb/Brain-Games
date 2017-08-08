@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { askName } from '../utils';
+import { askName } from './utils';
 
 export const iterationsCount = 3; // set the number of questions
 export const valueRangeMin = 1;

@@ -1,5 +1,5 @@
 import { generateNumber } from '../utils';
-import { valueRangeMin, valueRangeMax } from './brain-games';
+import { valueRangeMin, valueRangeMax } from '../index';
 
 console.log('Welcome to the Brain Games!');
 console.log('What is the result of the expression?\n');

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import { askName, generateNumber } from '../utils';
-import { iterationsCount, valueRangeMin, valueRangeMax } from './brain-games';
+import { iterationsCount, valueRangeMin, valueRangeMax } from '../index';
 
 const isEven = num => num % 2 === 0;
 
