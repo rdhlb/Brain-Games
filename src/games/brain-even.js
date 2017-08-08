@@ -18,13 +18,14 @@ const askNumber = () => {
 
     const randomNum = generateNumber(numberRangeMin, numberRangeMax);
     console.log(`Question: ${randomNum}`);
-    const answer = readlineSync.question('Your answer: ');
-    if ((isEven(randomNum) && answer === 'yes') || (!isEven(randomNum) && answer === 'no')) {
+    const userAnswer = readlineSync.question('Your answer: ');
+    const realAnswer = isEven(randomNum) ? 'yes' : 'no';
+    if (realAnswer === userAnswer) {
       console.log('Correct!');
       return iter(counter + 1);
     }
 
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${isEven(randomNum) ? 'yes' : 'no'}'.\n Let's try again, ${userName}!`);
+    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${realAnswer}'.\n Let's try again, ${userName}!`);
   };
 
   return iter(0);
