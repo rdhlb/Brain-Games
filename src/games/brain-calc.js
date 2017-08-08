@@ -17,7 +17,7 @@ const generateOperator = () => {
   }
 };
 
-const calculate = (a, b, operator) => {
+const calculateAnswer = (a, b, operator) => {
   switch (operator) {
     case '-':
       return a - b;
@@ -30,13 +30,13 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const calc = () => {
+const askCalc = () => {
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const operator = generateOperator();
   console.log(`Question: ${num1} ${operator} ${num2}`);
-  const realAnswer = calculate(num1, num2, operator);
+  const realAnswer = calculateAnswer(num1, num2, operator);
   return realAnswer;
 };
 
-export default calc;
+export default askCalc;
