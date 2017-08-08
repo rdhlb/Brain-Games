@@ -1,22 +1,21 @@
 import readlineSync from 'readline-sync';
-import { askName, generateNumber, isEven } from '../utils';
+import { askName, generateNumber } from '../utils';
+import { iterationsCount, valueRangeMin, valueRangeMax } from './brain-games';
 
-const iterationsCount = 3; // set the number of questions
-const numberRangeMin = 1;
-const numberRangeMax = 100;
+const isEven = num => num % 2 === 0;
+
+console.log('Welcome to the Brain Games!');
+console.log('Answer "yes" if number even otherwise answer "no".\n');
+
+const userName = askName();
 
 const askNumber = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-
-  const userName = askName();
-
   const iter = (counter) => {
     if (counter === iterationsCount) {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const randomNum = generateNumber(numberRangeMin, numberRangeMax);
+    const randomNum = generateNumber(valueRangeMin, valueRangeMax);
     console.log(`Question: ${randomNum}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const realAnswer = isEven(randomNum) ? 'yes' : 'no';
