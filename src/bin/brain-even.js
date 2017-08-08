@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { askName, generateNumber, isEven } from '../index';
+import { askName, generateNumber, isEven } from '..';
 
 console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if number even otherwise answer "no".\n');
