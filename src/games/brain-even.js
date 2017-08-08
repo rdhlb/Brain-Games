@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 import { askName, generateNumber, isEven } from '../utils';
 
-const askNumber = () => {
-  const iterationsCount = 3; // set the number of questions
-  const numberRangeMin = 1;
-  const numberRangeMax = 100;
+const iterationsCount = 3; // set the number of questions
+const numberRangeMin = 1;
+const numberRangeMax = 100;
 
+const askNumber = () => {
   console.log('Welcome to the Brain Games!');
   console.log('Answer "yes" if number even otherwise answer "no".\n');
 
