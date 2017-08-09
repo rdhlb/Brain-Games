@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { makeGame, generateNumber } from '..';
 
 const valueRangeMin = 1;
-const valueRangeMax = 20;
+const valueRangeMax = 100;
 
 console.log('Welcome to the Brain Games!');
 console.log('Answer "yes" if number even otherwise answer "no".\n');
