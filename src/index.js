@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 export const iterationsCount = 3; // set the number of questions
-export const valueRangeMin = 1;
-export const valueRangeMax = 20;
 
 export const askName = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -12,7 +11,7 @@ export const askName = () => {
 
 const isNumber = value => typeof value === 'number';
 
-export const makeGame = (logic) => {
+export const makeGame = (getPair) => {
   const userName = askName();
 
   const iter = (counter) => {
@@ -20,7 +19,11 @@ export const makeGame = (logic) => {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const calculatedAnswer = logic();
+    const gameData = getPair();
+    const gameQuestion = car(gameData);
+    const gameResult = cdr(gameData);
+    const calculatedAnswer = gameResult;
+    console.log(`Question: ${gameQuestion}`);
     const recievedAnswer = readlineSync.question('Your answer: ');
     const userAnswer = isNumber(calculatedAnswer) ? Number(recievedAnswer) : recievedAnswer;
     if (userAnswer === calculatedAnswer) {
@@ -28,7 +31,7 @@ export const makeGame = (logic) => {
       return iter(counter + 1);
     }
 
-    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\n Let's try again, ${userName}!\n`);
+    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\nLet's try again, ${userName}!\n`);
   };
 
   return iter(0);
