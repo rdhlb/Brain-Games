@@ -7,7 +7,7 @@ Brain-games
 ======
 Available games: brain-even, brain-calc, brain-gcd
 
-1. Install npm
+1. Install nodeJS
 2. npm i -g hexlet
 3. Type game name
 4. Enjoy!
