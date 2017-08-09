@@ -3,26 +3,24 @@ import { car, cdr } from 'hexlet-pairs';
 
 export const iterationsCount = 3; // set the number of questions
 
-export const askName = () => {
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\n`);
-  return name;
-};
-
-export const generateNumber = (min, max) => Math.floor(min + (Math.random() * ((max + 1) - min)));
-
 const isNumber = value => typeof value === 'number';
 
-export const makeGame = (getPair) => {
-  const userName = askName();
+export const makeGame = (game) => {
+  console.log('Welcome to the Brain Games!');
+
+  const gameRule = car(car(game()));
+  console.log(gameRule);
+
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!\n`);
 
   const iter = (counter) => {
     if (counter === iterationsCount) {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const gameData = getPair();
-    const gameQuestion = car(gameData);
+    const gameData = game();
+    const gameQuestion = cdr(car(gameData));
     const gameResult = cdr(gameData);
     const calculatedAnswer = gameResult;
     console.log(`Question: ${gameQuestion}`);

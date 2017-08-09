@@ -1,11 +1,9 @@
 import { cons } from 'hexlet-pairs';
-import { makeGame, generateNumber } from '..';
+import { makeGame } from '..';
+import generateNumber from '../utils';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;
-
-console.log('Welcome to the Brain Games!');
-console.log('What is the result of the expression?\n');
 
 const generateOperator = () => {
   switch (generateNumber(1, 3)) {
@@ -34,13 +32,14 @@ const calculateAnswer = (operator, a, b) => {
 };
 
 const askCalc = () => {
+  const rule = 'What is the result of the expression?\n';
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const operator = generateOperator();
-  const expression = `${num1} ${operator} ${num2}`;
-  const result = calculateAnswer(operator, num1, num2);
-  const pair = cons(expression, result);
-  return pair;
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = calculateAnswer(operator, num1, num2);
+  const game = cons(cons(rule, question), answer);
+  return game;
 };
 
 const startCalcGame = () => makeGame(askCalc);

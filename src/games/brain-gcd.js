@@ -1,11 +1,9 @@
 import { cons } from 'hexlet-pairs';
-import { makeGame, generateNumber } from '..';
+import { makeGame } from '..';
+import generateNumber from '../utils';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;
-
-console.log('Welcome to the Brain Games!');
-console.log('Find the greatest common divisor of given numbers.\n');
 
 const getGcd = (a, b) => {
   if (b === 0) {
@@ -16,12 +14,13 @@ const getGcd = (a, b) => {
 };
 
 const askGcd = () => {
+  const rule = 'Find the greatest common divisor of given numbers.\n';
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
-  const expression = `${num1} ${num2}`;
-  const result = getGcd(num1, num2);
-  const pair = cons(expression, result);
-  return pair;
+  const question = `${num1} ${num2}`;
+  const answer = getGcd(num1, num2);
+  const game = cons(cons(rule, question), answer);
+  return game;
 };
 
 const startGcdGame = () => makeGame(askGcd);

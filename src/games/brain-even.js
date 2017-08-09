@@ -1,20 +1,19 @@
 import { cons } from 'hexlet-pairs';
-import { makeGame, generateNumber } from '..';
+import { makeGame } from '..';
+import generateNumber from '../utils';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;
 
-console.log('Welcome to the Brain Games!');
-console.log('Answer "yes" if number even otherwise answer "no".\n');
-
 const isEven = num => num % 2 === 0;
 
 const askEven = () => {
+  const rule = 'Answer "yes" if number even otherwise answer "no".\n';
   const num = generateNumber(valueRangeMin, valueRangeMax);
-  const expression = `${num}`;
-  const result = isEven(num) ? 'yes' : 'no';
-  const pair = cons(expression, result);
-  return pair;
+  const question = `${num}`;
+  const answer = isEven(num) ? 'yes' : 'no';
+  const game = cons(cons(rule, question), answer);
+  return game;
 };
 
 const startEvenGame = () => makeGame(askEven);
