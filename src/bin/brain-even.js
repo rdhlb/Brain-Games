@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { makeGame } from '../index';
+import { makeGame } from '..';
 import askNumber from '../games/brain-even';
 
 makeGame(askNumber);
