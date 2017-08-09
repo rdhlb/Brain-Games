@@ -1,6 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import generateNumber from '../utils';
-import { makeGame } from '..';
+import { makeGame, generateNumber } from '..';
 
 const valueRangeMin = 1;
 const valueRangeMax = 20;

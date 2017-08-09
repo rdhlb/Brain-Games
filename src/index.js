@@ -9,6 +9,8 @@ export const askName = () => {
   return name;
 };
 
+export const generateNumber = (min, max) => Math.floor(min + (Math.random() * ((max + 1) - min)));
+
 const isNumber = value => typeof value === 'number';
 
 export const makeGame = (getPair) => {
@@ -26,6 +28,7 @@ export const makeGame = (getPair) => {
     console.log(`Question: ${gameQuestion}`);
     const recievedAnswer = readlineSync.question('Your answer: ');
     const userAnswer = isNumber(calculatedAnswer) ? Number(recievedAnswer) : recievedAnswer;
+
     if (userAnswer === calculatedAnswer) {
       console.log('Correct!');
       return iter(counter + 1);
