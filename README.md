@@ -2,3 +2,6 @@
 [![Test Coverage](https://codeclimate.com/github/rdhlb/project-lvl1-s120/badges/coverage.svg)](https://codeclimate.com/github/rdhlb/project-lvl1-s120/coverage)
 [![Issue Count](https://codeclimate.com/github/rdhlb/project-lvl1-s120/badges/issue_count.svg)](https://codeclimate.com/github/rdhlb/project-lvl1-s120)
 [![Build Status](https://travis-ci.org/rdhlb/project-lvl1-s120.svg?branch=master)](https://travis-ci.org/rdhlb/project-lvl1-s120)
+
+1. Install npm
+2. npm i -g hexlet
