@@ -26,10 +26,10 @@ const askCalc = () => {
   const expression = generateExpression(num1, num2);
   const question = car(expression);
   const answer = String(cdr(expression));
-  const game = cons(cons(rule, question), answer);
+  const game = cons(question, answer);
   return game;
 };
 
-const startCalcGame = () => makeGame(askCalc);
+const startCalcGame = () => makeGame(askCalc, rule);
 
 export default startCalcGame;

@@ -13,10 +13,10 @@ const askEven = () => {
   const num = generateNumber(valueRangeMin, valueRangeMax);
   const question = `${num}`;
   const answer = isEven(num) ? 'yes' : 'no';
-  const game = cons(cons(rule, question), answer);
+  const game = cons(question, answer);
   return game;
 };
 
-const startEvenGame = () => makeGame(askEven);
+const startEvenGame = () => makeGame(askEven, rule);
 
 export default startEvenGame;

@@ -20,10 +20,10 @@ const askGcd = () => {
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const question = `${num1} ${num2}`;
   const answer = String(getGcd(num1, num2));
-  const game = cons(cons(rule, question), answer);
+  const game = cons(question, answer);
   return game;
 };
 
-const startGcdGame = () => makeGame(askGcd);
+const startGcdGame = () => makeGame(askGcd, rule);
 
 export default startGcdGame;
