@@ -24,7 +24,7 @@ const askCalc = () => {
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const expression = generateExpression(num1, num2);
   const question = car(expression);
-  const answer = cdr(expression);
+  const answer = String(cdr(expression));
   const game = cons(cons(rule, question), answer);
   return game;
 };

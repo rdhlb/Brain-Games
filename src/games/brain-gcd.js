@@ -18,7 +18,7 @@ const askGcd = () => {
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const question = `${num1} ${num2}`;
-  const answer = getGcd(num1, num2);
+  const answer = String(getGcd(num1, num2));
   const game = cons(cons(rule, question), answer);
   return game;
 };

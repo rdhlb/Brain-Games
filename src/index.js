@@ -5,10 +5,10 @@ export const iterationsCount = 3; // set the number of questions
 
 const isNumber = value => typeof value === 'number';
 
-export const makeGame = (game) => {
+export const makeGame = (generateGameData) => {
   console.log('Welcome to the Brain Games!');
 
-  const gameRule = car(car(game()));
+  const gameRule = car(car(generateGameData()));
   console.log(gameRule);
 
   const userName = readlineSync.question('May I have your name? ');
@@ -19,12 +19,11 @@ export const makeGame = (game) => {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const gameData = game();
+    const gameData = generateGameData();
     const question = cdr(car(gameData));
     const result = cdr(gameData);
     console.log(`Question: ${question}`);
-    const recievedAnswer = readlineSync.question('Your answer: ');
-    const userAnswer = isNumber(result) ? Number(recievedAnswer) : recievedAnswer;
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === result) {
       console.log('Correct!');
