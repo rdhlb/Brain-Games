@@ -3,8 +3,6 @@ import { car, cdr } from 'hexlet-pairs';
 
 export const iterationsCount = 3; // set the number of questions
 
-const isNumber = value => typeof value === 'number';
-
 export const makeGame = (generateGameData) => {
   console.log('Welcome to the Brain Games!');
 
