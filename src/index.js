@@ -30,5 +30,5 @@ export const makeGame = (generateGameData, rule) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  return iter(0, userName, generateGameData);
+  iter(0, userName, generateGameData);
 };
