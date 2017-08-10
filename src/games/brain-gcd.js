@@ -2,6 +2,8 @@ import { cons } from 'hexlet-pairs';
 import { makeGame } from '..';
 import generateNumber from '../utils';
 
+const rule = 'Find the greatest common divisor of given numbers.\n';
+
 const valueRangeMin = 1;
 const valueRangeMax = 100;
 
@@ -14,7 +16,6 @@ const getGcd = (a, b) => {
 };
 
 const askGcd = () => {
-  const rule = 'Find the greatest common divisor of given numbers.\n';
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const question = `${num1} ${num2}`;

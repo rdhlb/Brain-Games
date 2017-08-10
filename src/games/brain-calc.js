@@ -2,6 +2,8 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import { makeGame } from '..';
 import generateNumber from '../utils';
 
+const rule = 'What is the result of the expression?\n';
+
 const valueRangeMin = 1;
 const valueRangeMax = 100;
 
@@ -19,7 +21,6 @@ const generateExpression = (a, b) => {
 };
 
 const askCalc = () => {
-  const rule = 'What is the result of the expression?\n';
   const num1 = generateNumber(valueRangeMin, valueRangeMax);
   const num2 = generateNumber(valueRangeMin, valueRangeMax);
   const expression = generateExpression(num1, num2);
