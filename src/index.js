@@ -18,16 +18,16 @@ export const makeGame = (generateGameData, rule) => {
 
     const gameData = generateGameData();
     const question = car(gameData);
-    const result = cdr(gameData);
+    const calculatedAnswer = cdr(gameData);
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === result) {
+    if (userAnswer === calculatedAnswer) {
       console.log('Correct!');
       return iter(counter + 1);
     }
 
-    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!\n`);
+    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\nLet's try again, ${userName}!\n`);
   };
 
   return iter(0);
