@@ -5,7 +5,7 @@ import generateNumber from '../utils';
 const rule = 'Balance the given number.';
 
 const valueRangeMin = 10;
-const valueRangeMax = 1000;
+const valueRangeMax = 20000;
 
 const getMaxOfArray = numArray => Math.max.apply(null, numArray);
 
