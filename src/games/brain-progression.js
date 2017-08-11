@@ -9,16 +9,16 @@ const valueRangeMax = 100;
 const progressionLength = 10;
 
 const makeProgression = (first, difference, length, skippedPosition) => {
-  const iter = (counter, acc, skippedNumber) => {
-    if (counter > progressionLength) {
-      return cons(acc, skippedNumber);
+  const iter = (counter, progression, skippedNumber) => {
+    if (counter > length) {
+      return cons(progression, skippedNumber);
     }
 
     if (counter === skippedPosition) {
-      return iter(counter + 1, `${acc}.. `, `${first + ((counter - 1) * difference)}`);
+      return iter(counter + 1, `${progression}.. `, `${first + ((counter - 1) * difference)}`);
     }
 
-    return iter(counter + 1, `${acc + (first + ((counter - 1) * difference))} `, skippedNumber);
+    return iter(counter + 1, `${progression + (first + ((counter - 1) * difference))} `, skippedNumber);
   };
 
   return iter(1, '', 0);
