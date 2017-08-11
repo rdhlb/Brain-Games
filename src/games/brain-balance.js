@@ -19,9 +19,9 @@ const normalizeToString = (arr) => {
 const balanceArr = (arr) => {
   const balancedArr = arr;
 
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let j = 0; j < arr.length; j += 1) {
-      if (arr[i] - arr[j] > 1) {
+  for (let i = 0; i < balancedArr.length; i += 1) {
+    for (let j = 0; j < balancedArr.length; j += 1) {
+      if (balancedArr[i] - balancedArr[j] > 1) {
         balancedArr[i] -= 1;
         balancedArr[j] += 1;
       }
