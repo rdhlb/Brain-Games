@@ -34,5 +34,6 @@
   "dependencies": {
     "hexlet-pairs": "^1.0.5",
     "readline-sync": "^1.4.7"
-  }
+  },
+  "repository": "github:rdhlb/project-lvl1-s120"
 }
