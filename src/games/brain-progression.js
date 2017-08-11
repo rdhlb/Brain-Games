@@ -15,11 +15,11 @@ const makeProgression = (first, difference, length, skippedPosition) => {
     }
 
     if (counter === skippedPosition) {
-      skippedNumber = `${first + (counter - 1) * difference}`;
-      return iter(counter + 1, acc + '.. ', skippedNumber);
+      skippedNumber = `${first + ((counter - 1) * difference)}`;
+      return iter(counter + 1, `${acc}.. `, skippedNumber);
     }
 
-    return iter(counter + 1, acc + `${first + (counter - 1) * difference} `, skippedNumber);
+    return iter(counter + 1, acc + `${first + ((counter - 1) * difference)} `, skippedNumber);
   };
 
   return iter(1, '', 0);
