@@ -3,9 +3,9 @@ import { car, cdr } from 'hexlet-pairs';
 
 export const iterationsCount = 3; // set the number of questions
 
-const iter = (counter, userName, generateGameData) => {
+const iter = (counter, generateGameData) => {
   if (counter === iterationsCount) {
-    return console.log(`Congratulations, ${userName}!`);
+    return true;
   }
 
   const gameData = generateGameData();
@@ -16,10 +16,11 @@ const iter = (counter, userName, generateGameData) => {
 
   if (userAnswer === calculatedAnswer) {
     console.log('Correct!');
-    return iter(counter + 1, userName, generateGameData);
+    return iter(counter + 1, generateGameData);
   }
 
-  return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\nLet's try again, ${userName}!\n`);
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\n`);
+  return false;
 };
 
 export const makeGame = (generateGameData, rule) => {
@@ -30,5 +31,7 @@ export const makeGame = (generateGameData, rule) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  iter(0, userName, generateGameData);
+  const gameResult = iter(0, generateGameData);
+
+  return gameResult ? console.log(`Congratulations, ${userName}!`) : console.log(`Let's try again, ${userName}!\n`);
 };
