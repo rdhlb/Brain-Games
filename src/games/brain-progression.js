@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { makeGame } from '..';
 import generateNumber from '../utils';
 
-const rule = 'What number is missing in this progression?\n';
+const rule = 'What number is missing in this progression?';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;

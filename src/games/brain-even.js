@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { makeGame } from '..';
 import generateNumber from '../utils';
 
-const rule = 'Answer "yes" if number even otherwise answer "no".\n';
+const rule = 'Answer "yes" if number even otherwise answer "no".';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;

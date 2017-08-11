@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { makeGame } from '..';
 import generateNumber from '../utils';
 
-const rule = 'What is the result of the expression?\n';
+const rule = 'What is the result of the expression?';
 
 const valueRangeMin = 1;
 const valueRangeMax = 100;

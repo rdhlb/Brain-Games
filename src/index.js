@@ -19,16 +19,16 @@ const playGame = (counter, generateGameData) => {
     return playGame(counter + 1, generateGameData);
   }
 
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.\n`);
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calculatedAnswer}'.`);
   return false;
 };
 
 export const makeGame = (generateGameData, rule) => {
-  console.log('Welcome to the Brain Games!');
+  console.log('\nWelcome to the Brain Games!');
 
   console.log(rule);
 
-  const userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
   const gameResult = playGame(0, generateGameData);
