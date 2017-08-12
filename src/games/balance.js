@@ -31,8 +31,8 @@ const balanceArr = (arr) => {
 };
 
 const getBalancedAsString = (num) => {
-  const str = String(num);
-  const strArray = str.split('');
+  const numAsStr = String(num);
+  const strArray = numAsStr.split('');
   const numArray = strArray.map(element => Number(element));
   let balancedArray = balanceArr(numArray);
   while (getMaxOfArray(balancedArray) - getMinOfArray(balancedArray) > 1) {

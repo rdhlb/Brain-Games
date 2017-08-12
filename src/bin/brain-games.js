@@ -1,3 +1,4 @@
 #!/usr/bin/env node
+import initializeMenu from '../brain-games';
 
-console.log('Welcome to the Brain Games!\n');
+initializeMenu();
