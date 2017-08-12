@@ -7,38 +7,25 @@ const rule = 'Balance the given number.';
 const valueRangeMin = 10;
 const valueRangeMax = 20000;
 
-const getMaxOfArray = numArray => Math.max.apply(null, numArray);
-
-const getMinOfArray = numArray => Math.min.apply(null, numArray);
-
-const normalizeToString = (arr) => {
-  const ascendingArr = arr.sort();
-  return ascendingArr.join('');
-};
-
-const balanceArr = (arr) => {
-  const balancedArr = arr;
-
-  for (let i = 0; i < balancedArr.length; i += 1) {
-    for (let j = 0; j < balancedArr.length; j += 1) {
-      if (balancedArr[i] - balancedArr[j] > 1) {
-        balancedArr[i] -= 1;
-        balancedArr[j] += 1;
-      }
-    }
-  }
-  return balancedArr;
-};
-
 const getBalancedAsString = (num) => {
-  const numAsStr = String(num);
-  const strArray = numAsStr.split('');
-  const numArray = strArray.map(element => Number(element));
-  let balancedArray = balanceArr(numArray);
-  while (getMaxOfArray(balancedArray) - getMinOfArray(balancedArray) > 1) {
-    balancedArray = balanceArr(balancedArray);
-  }
-  return normalizeToString(balancedArray);
+  const numerals = String(num);
+  const numeralsList = numerals.split('').map(element => Number(element));
+  const length = numeralsList.length;
+
+  const iter = (sortedNumerals) => {
+    const balancedNumber = sortedNumerals;
+
+    if (balancedNumber[length - 1] - balancedNumber[0] > 1) {
+      balancedNumber[length - 1] -= 1;
+      balancedNumber[0] += 1;
+
+      return iter(balancedNumber.sort());
+    }
+
+    return balancedNumber.join('');
+  };
+
+  return iter(numeralsList.sort());
 };
 
 const askBalance = () => {
