@@ -30,10 +30,10 @@ const balanceArr = (arr) => {
   return balancedArr;
 };
 
-const getBalancedAsString = (n) => {
-  const str = String(n);
+const getBalancedAsString = (num) => {
+  const str = String(num);
   const strArray = str.split('');
-  const numArray = strArray.map(num => Number(num));
+  const numArray = strArray.map(element => Number(element));
   let balancedArray = balanceArr(numArray);
   while (getMaxOfArray(balancedArray) - getMinOfArray(balancedArray) > 1) {
     balancedArray = balanceArr(balancedArray);
