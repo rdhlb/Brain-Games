@@ -8,24 +8,23 @@ const valueRangeMin = 10;
 const valueRangeMax = 20000;
 
 const getBalancedAsString = (num) => {
-  const numerals = String(num);
-  const numeralsList = numerals.split('').map(element => Number(element));
+  const numeralsList = String(num).split('').map(element => Number(element));
   const length = numeralsList.length;
 
-  const iter = (sortedNumerals) => {
-    const balancedNumber = sortedNumerals;
+  const iter = (numerals) => {
+    const acc = numerals.sort();
 
-    if (balancedNumber[length - 1] - balancedNumber[0] > 1) {
-      balancedNumber[length - 1] -= 1;
-      balancedNumber[0] += 1;
+    if (acc[length - 1] - acc[0] > 1) {
+      acc[length - 1] -= 1;
+      acc[0] += 1;
 
-      return iter(balancedNumber.sort());
+      return iter(acc);
     }
 
-    return balancedNumber.join('');
+    return acc.join('');
   };
 
-  return iter(numeralsList.sort());
+  return iter(numeralsList);
 };
 
 const askBalance = () => {
