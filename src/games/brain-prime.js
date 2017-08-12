@@ -7,14 +7,14 @@ const rule = 'Answer "yes" if number prime otherwise answer "no".';
 const valueRangeMin = 1;
 const valueRangeMax = 30;
 
-const isPrime = (n) => {
-  if (n <= 1) {
+const isPrime = (num) => {
+  if (num <= 1) {
     return false;
   }
 
   const iter = (divider) => {
-    if (divider <= n / 2) {
-      if (n % divider === 0) {
+    if (divider <= num / 2) {
+      if (num % divider === 0) {
         return false;
       }
     } else {
