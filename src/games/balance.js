@@ -13,8 +13,10 @@ const getBalancedAsString = (num) => {
 
   const iter = (numerals) => {
     const acc = numerals.sort();
+    const max = acc[length - 1];
+    const min = acc[0];
 
-    if (acc[length - 1] - acc[0] > 1) {
+    if (max - min > 1) {
       acc[length - 1] -= 1;
       acc[0] += 1;
 
