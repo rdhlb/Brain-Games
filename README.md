@@ -5,9 +5,9 @@
 
 Brain-games
 ======
-Available games: brain-even, brain-calc, brain-gcd
+Available games: isEven, calc, gcd, progression, balance, isPrime
 
 1. Install nodeJS
 2. npm i -g hexlet
-3. Type game name
+3. start with ```brain-games``` command
 4. Enjoy!
