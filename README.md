@@ -11,3 +11,6 @@ Available games: isEven, calc, gcd, progression, balance, isPrime
 2. npm i -g hexlet
 3. start with ```brain-games``` command
 4. Enjoy!
+
+### Video manual: 
+[![asciicast](https://asciinema.org/a/cmgAWIR5p3cfqedEIWyr6O4sg.png)](https://asciinema.org/a/cmgAWIR5p3cfqedEIWyr6O4sg)
